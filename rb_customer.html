@@ -50,9 +50,36 @@
          
          <form action="http://www.exxample.com/redball/customer" method="POST">
             <div>
-               <label>Name*</label>
-               <input id="">
+               <label for="nameBox">Name*</label>
+               <input required name="custName" id="nameBox" type="text" placeholder="First and Last Name">
             </div>
+            <div>
+               <label for="phoneBox">Phone*</label>
+               <input required name="custPhone" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" id="phoneBox" type="tel" placeholder="(nnn) nnn-nnnn">
+            </div>
+            <div>
+               <input name="orderType" id="delivery" type="radio" checked>
+               <label for="delivery">Delivery</label>
+               
+               <input name="orderType" id="pickup" type="radio" >
+               <label for="pickup">Pickup</label>
+            </div>
+            <fieldset id="deliveryInfo">
+               <legend>Delivery Options</legend>
+               <textarea name="delAddress" id="addressBox" placeholder="Enter delivery address"></textarea>
+               <label for="delBox"></label>
+               <input name="delTime" id="delBox" type="time">
+            </fieldset>
+            <fieldset id="pickupInfo">
+               <legend>Pickup Options</legend>
+               <label for="pickupBox">Pickup time</label>
+               <input disabled name="pickupTime" id="pickupBox" type="time">
+            </fieldset>
+
+            <div id="button">
+               <input type="submit" value="Begin Building your Order" />
+            </div>
+
          </form>
          
    </section>
